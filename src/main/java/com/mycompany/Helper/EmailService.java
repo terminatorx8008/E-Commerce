@@ -27,7 +27,7 @@ public class EmailService {
 
     public boolean sendEmail(OtpData user) {
         String to = user.getEmail();
-        String from = "vasunamdevidformovies@gmail.com"; // Corrected email address
+        String from = "#@gmail.com"; // Corrected email address
         boolean flag = false; // Corrected variable name
 
         try {
@@ -39,8 +39,8 @@ public class EmailService {
 
             Session session = Session.getInstance(properties, new Authenticator() {
                 protected PasswordAuthentication getPasswordAuthentication() {
-                    String password = "rqbryvmnwbmzzlyg"; // Replace with your app password
-                    String user_name = "vasunamdevidformovies";
+                    String password = "#"; // Replace with your app password
+                    String user_name = "#";
                     return new PasswordAuthentication(user_name, password);
                 }
             });
