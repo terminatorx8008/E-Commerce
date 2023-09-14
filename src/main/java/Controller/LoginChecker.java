@@ -46,7 +46,7 @@ public class LoginChecker extends HttpServlet {
             if(user.getUserType().equals("admin")){
                 response.sendRedirect("admin.jsp");                
             }else if(user.getUserType().equals("normal")){
-                response.sendRedirect("normal.jsp");
+                response.sendRedirect("index.jsp");
             }
         }
     }

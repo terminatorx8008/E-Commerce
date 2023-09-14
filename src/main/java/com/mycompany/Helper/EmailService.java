@@ -1,7 +1,7 @@
 package com.mycompany.Helper;
 
 
-import Data.User;
+import Dto.OtpData;
 import jakarta.mail.Authenticator;
 import jakarta.mail.Message;
 import jakarta.mail.PasswordAuthentication;
@@ -16,7 +16,7 @@ public class EmailService {
 
     int number;
 
-    public String generateOtp(User user) {
+    public String generateOtp(OtpData user) {
         Random rnd = new Random();
         number = rnd.nextInt(999999);
         String num= String.format("%06d", number);
@@ -25,7 +25,7 @@ public class EmailService {
         
     }
 
-    public boolean sendEmail(User user) {
+    public boolean sendEmail(OtpData user) {
         String to = user.getEmail();
         String from = "vasunamdevidformovies@gmail.com"; // Corrected email address
         boolean flag = false; // Corrected variable name

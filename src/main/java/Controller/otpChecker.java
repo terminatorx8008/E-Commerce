@@ -1,6 +1,6 @@
 package Controller;
 
-import Data.User;
+import Dto.OtpData;
 import java.io.IOException;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -22,10 +22,9 @@ public class otpChecker extends HttpServlet {
         
         String otp = request.getParameter("userotp");
         HttpSession session = request.getSession();
-        User user = (User) session.getAttribute("user");
+        OtpData user = (OtpData) session.getAttribute("user1");
         if (otp.equals(user.getOtp())) {
-            session.setAttribute("message","ha bhai ho gaya otp match");
-            response.sendRedirect("forgetPassword.jsp");
+            response.sendRedirect("changePassword.jsp");
         }
     }
 }

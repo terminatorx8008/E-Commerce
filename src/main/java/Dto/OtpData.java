@@ -3,13 +3,13 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package Data;
+package Dto;
 
 /**
  *
  * @author Vasu
  */
-public class User {
+public class OtpData {
     String email;
     String otp;
 
@@ -28,5 +28,4 @@ public class User {
     public void setOtp(String otp) {
         this.otp = otp;
     }
-    
 }

@@ -5,7 +5,7 @@
  */
 package Controller;
 
-import Data.User;
+import Dto.OtpData;
 import com.mycompany.Helper.EmailService;
 import java.io.IOException;
 import javax.servlet.ServletException;
@@ -31,14 +31,14 @@ public class Otpsender extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String to = request.getParameter("userEmail");
-        User user = new User();
+        OtpData user = new OtpData();
         user.setEmail(to);
         EmailService ems = new EmailService();
         if (ems.sendEmail(user)) {
             HttpSession session = request.getSession();
-            session.setAttribute("user",user);
+            session.setAttribute("user1",user);
             session.setAttribute("message", "OTP send successfuly check your mail");
-            response.sendRedirect("changePassword.jsp");
+            response.sendRedirect("forgetPassword.jsp");
             
         } else {
             HttpSession session = request.getSession();
